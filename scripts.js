@@ -1,57 +1,93 @@
-// Addition Function
-function add(num1, num2) {
-  return num1 + num2;
-}
+// Get elements
+let num1Display = document.getElementById("num1Display");
+let opDisplay = document.getElementById("opDisplay");
+let num2Display = document.getElementById("num2Display");
+let ansDisplay = document.getElementById("ansDisplay");
 
-// Substraction Function
-function substract(num1, num2) {
-  return num1 - num2;
-}
+// Declare variables
+let num1 = "";
+let num2 = "";
+let operator = "";
+let result = "";
 
-// Multiply Function
-function multiply(num1, num2) {
-  return num1 * num2;
-}
-
-// Divide Function
-function divide(num1, num2) {
-  return num1 / num2;
-}
-
-const num1 = 5;
-const num2 = 5;
-const operator = "+";
-
-function operate(num1, operator, num2) {
-  if (operator == "+") {
-    return add(num1, num2);
-  } else if (operator === "-") {
-    return substract(num1, num2);
-  } else if (operator === "*") {
-    return multiply(num1, num2);
-  } else if (operator === "/") {
-    return divide(num1, num2);
+// Number Button click Function
+function handleNumberClick(value) {
+  if (operator === "") {
+    num1 += value;
+    num1Display.textContent = num1;
   } else {
-    return "Wrong Syntax";
+    num2 += value;
+    num2Display.textContent = num2;
   }
 }
 
-console.log(operate(num1, operator, num2));
+// Function to handle operator button clicks
+function handleOperatorClick(value) {
+  if (num1 !== "") {
+    operator = value;
+    opDisplay.textContent = operator;
+  }
+}
 
-// Define the display and clear btns
-let clearBtn = document.getElementById("clearBtn");
-let inputDisplay = document.getElementById("inputDisplay");
-let ansDisplay = document.getElementById("ansDisplay");
+function operate() {
+  if (num1 !== "" && num2 !== "" && operator !== "") {
+    let num1Float = parseFloat(num1);
+    let num2Float = parseFloat(num2);
 
-clearBtn.addEventListener("click", () => {
-  inputDisplay.innerHTML = "";
-  ansDisplay.innerHTML = "";
+    switch (operator) {
+      case "+":
+        result = num1Float + num2Float;
+        break;
+      case "-":
+        result = num1Float - num2Float;
+        break;
+      case "x":
+        result = num1Float * num2Float;
+        break;
+      case "/":
+        result = num2Float !== 0 ? num1Float / num2Float : "Error";
+        break;
+      default:
+        result = "Error";
+        break;
+    }
+
+    ansDisplay.textContent = result;
+  }
+}
+
+// Function to clear all displays
+function clearDisplay() {
+  num1 = "";
+  num2 = "";
+  operator = "";
+  result = "";
+  num1Display.textContent = "";
+  opDisplay.textContent = "";
+  num2Display.textContent = "";
+  ansDisplay.textContent = "";
+}
+
+// Add event listeners to number buttons
+document.querySelectorAll(".btn").forEach((button) => {
+  button.addEventListener("click", function () {
+    handleNumberClick(this.textContent);
+  });
 });
 
-let buttons = document.querySelectorAll(".btn");
-
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    console.log(button.textContent);
+// Add event listeners to operator buttons
+document.querySelectorAll(".btnOp").forEach((button) => {
+  button.addEventListener("click", function () {
+    handleOperatorClick(this.textContent);
   });
+});
+
+// Add event listener to equals button
+document.getElementById("equalBtn").addEventListener("click", function () {
+  operate();
+});
+
+// Add event listener to clear button
+document.getElementById("clearBtn").addEventListener("click", function () {
+  clearDisplay();
 });
