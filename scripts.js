@@ -37,3 +37,11 @@ function operate(num1, operator, num2) {
 }
 
 console.log(operate(num1, operator, num2));
+
+let buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    console.log(button.textContent);
+  });
+});
