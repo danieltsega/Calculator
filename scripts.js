@@ -20,9 +20,20 @@ function divide(num1, num2) {
 
 const num1 = 5;
 const num2 = 5;
-const operator = "";
+const operator = "+";
 
-console.log(add(num1, num2));
-console.log(substract(num1, num2));
-console.log(multiply(num1, num2));
-console.log(divide(num1, num2));
+function operate(num1, operator, num2) {
+  if (operator == "+") {
+    return add(num1, num2);
+  } else if (operator === "-") {
+    return substract(num1, num2);
+  } else if (operator === "*") {
+    return multiply(num1, num2);
+  } else if (operator === "/") {
+    return divide(num1, num2);
+  } else {
+    return "Wrong Syntax";
+  }
+}
+
+console.log(operate(num1, operator, num2));
