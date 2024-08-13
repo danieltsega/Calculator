@@ -12,21 +12,21 @@
     >
       <!-- Display Div -->
       <div
-        class="w-full bg-white px-4 py-4 flex flex-col items-end text-lg font-medium"
+        class="w-full bg-white px-4 py-2 h-24 flex flex-col items-end text-lg font-medium"
       >
         <!-- Input Div -->
-        <div class="w-full flex justify-end gap-2 mb-1">
+        <div class="w-full flex justify-end gap-2 mb-1" id="inputDisplay">
           <!-- Num1 -->
-          <div>1</div>
+          <div class="m-0 p-0">1</div>
 
           <!-- Operator -->
-          <div>+</div>
+          <div class="m-0 p-0">+</div>
 
           <!-- Num2 -->
-          <div>2</div>
+          <div class="m-0 p-0">1</div>
         </div>
         <!-- Output Div -->
-        <div class="font-bold text-2xl">3</div>
+        <div class="font-bold text-2xl m-0 p-0" id="ansDisplay">1</div>
       </div>
 
       <!-- Buttons Div -->
@@ -36,7 +36,7 @@
           <div
             class="w-1/4 bg-blue-300 p-2 text-center text-xl font-bold border hover:bg-blue-400 cursor-pointer text-white"
           >
-            <button>C</button>
+            <button id="clearBtn">C</button>
           </div>
         </div>
         <!-- Operators Div -->
