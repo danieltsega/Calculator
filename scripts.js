@@ -66,12 +66,16 @@ function clearDisplay() {
   opDisplay.textContent = "";
   num2Display.textContent = "";
   ansDisplay.textContent = "";
+  document.getElementById("dot").disabled = false;
 }
 
 // Add event listeners to number buttons
 document.querySelectorAll(".btn").forEach((button) => {
   button.addEventListener("click", function () {
     handleNumberClick(this.textContent);
+    if (button.textContent === ".") {
+      document.getElementById("dot").disabled = true;
+    }
   });
 });
 
