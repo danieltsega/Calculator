@@ -6,13 +6,13 @@
     <title>Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="flex items-center justify-center h-lvh">
+  <body class="flex flex-col items-center justify-center h-lvh">
     <div
-      class="w-1/2 mx-auto p-4 flex flex-col items-center justify-center bg-gray-100"
+      class="md:w-1/4 w-1/2 mx-auto p-4 flex flex-col items-center justify-center bg-gray-100 drop-shadow-lg"
     >
       <!-- Display Div -->
       <div
-        class="w-full bg-white px-4 py-2 flex flex-col items-end text-lg font-medium"
+        class="w-full bg-white px-4 py-4 flex flex-col items-end text-lg font-medium"
       >
         <!-- Input Div -->
         <div class="w-full flex justify-end gap-2 mb-1">
@@ -26,7 +26,7 @@
           <div>2</div>
         </div>
         <!-- Output Div -->
-        <div class="font-bold text-xl">3</div>
+        <div class="font-bold text-2xl">3</div>
       </div>
 
       <!-- Buttons Div -->
@@ -44,22 +44,22 @@
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>7</button>
+            <button class="btn">7</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>8</button>
+            <button class="btn">8</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>9</button>
+            <button class="btn">9</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer text-blue-400"
           >
-            <button>/</button>
+            <button class="btn">/</button>
           </div>
         </div>
 
@@ -68,22 +68,22 @@
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>4</button>
+            <button class="btn">4</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>5</button>
+            <button class="btn">5</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>6</button>
+            <button class="btn">6</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer text-blue-400"
           >
-            <button>x</button>
+            <button class="btn">x</button>
           </div>
         </div>
 
@@ -92,22 +92,22 @@
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>1</button>
+            <button class="btn">1</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>2</button>
+            <button class="btn">2</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>3</button>
+            <button class="btn">3</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer text-blue-400"
           >
-            <button>-</button>
+            <button class="btn">-</button>
           </div>
         </div>
 
@@ -116,17 +116,17 @@
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>0</button>
+            <button class="btn">0</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer"
           >
-            <button>.</button>
+            <button class="btn">.</button>
           </div>
           <div
             class="w-1/4 bg-white p-4 text-center text-xl font-bold border hover:bg-gray-50 cursor-pointer text-blue-400"
           >
-            <button>+</button>
+            <button class="btn">+</button>
           </div>
           <div
             class="w-1/4 bg-orange-400 p-4 text-center text-xl font-bold border hover:bg-orange-500 cursor-pointer"
@@ -136,6 +136,7 @@
         </div>
       </div>
     </div>
+    <footer class="mt-8">&copy; 2024 The Odin Project.</footer>
     <script src="scripts.js"></script>
   </body>
 </html>
