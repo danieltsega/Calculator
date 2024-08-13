@@ -38,6 +38,16 @@ function operate(num1, operator, num2) {
 
 console.log(operate(num1, operator, num2));
 
+// Define the display and clear btns
+let clearBtn = document.getElementById("clearBtn");
+let inputDisplay = document.getElementById("inputDisplay");
+let ansDisplay = document.getElementById("ansDisplay");
+
+clearBtn.addEventListener("click", () => {
+  inputDisplay.innerHTML = "";
+  ansDisplay.innerHTML = "";
+});
+
 let buttons = document.querySelectorAll(".btn");
 
 buttons.forEach((button) => {
